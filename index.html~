@@ -14,6 +14,8 @@ function print_event(name, event){
   output.innerHTML += (s.substring(0,s.length-1)+"}</p>");
 }
 
+
+
 window.onload = function(){
 
   box.ontouchstart = function(event){
@@ -28,6 +30,7 @@ window.onload = function(){
     print_event("touchend", event);
   }
 
+/*
   box.onmousedown = function(event){
     print_event("mousedown", event);
   }
@@ -39,6 +42,7 @@ window.onload = function(){
   box.onmousemove = function(event){
     print_event("mousemove", event);
   }
+*/
 }
 </script>
 
