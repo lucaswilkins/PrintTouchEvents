@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<script type="text/javascript">
+
+function print_event(name, event){
+  s = "<p><b><i>"+name+"</i></b>: {";
+  for(var key in event){
+    s += "<br>&nbsp;<b>" + key + "</b>: " + event[key]+",";
+  }
+
+  output.innerHTML += (s.substring(0,s.length-1)+"}</p>");
+}
+
+window.onload = function(){
+
+  box.ontouchstart = function(event){
+    print_event("touchstart", event);
+  }
+
+  box.ontouchmove = function(event){
+    print_event("touchmove", event);
+  }
+
+  box.ontouchend = function(event){
+    print_event("touchend", event);
+  }
+
+  box.onmousedown = function(event){
+    print_event("mousedown", event);
+  }
+
+  box.onmouseup = function(event){
+    print_event("mouseup", event);
+  }
+
+  box.onmousemove = function(event){
+    print_event("mousemove", event);
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="box" style="background: black; height: 50px; width: 50px"></div>
+
+<div id="output"></div>
+
+</body>
+
+
+</html>
