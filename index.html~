@@ -8,7 +8,7 @@
 function print_event(name, event){
   s = "<p><b><i>"+name+"</i></b>: {";
   s += "<br><i>changedTouches</i>: [";
-  for(var touchid in event.changedTouches){
+  for(var touchid=0; touchid < event.changedTouches.length; i++){
     s += "<br>"+touchid+": {"
     for(var key in event){
       s += "<br>&nbsp;<b>" + key + "</b>: " + event.changedTouches[touchid][key]+",";
@@ -16,15 +16,15 @@ function print_event(name, event){
     s += "]";
   }
   s += "}<br><i>targetTouches</i>: ["
-  for(var touchid in event.changedTouches){
+  for(var touchid=0; touchid < event.targetTouches.length; i++){
     s += "<br>"+touchid+": {"
     for(var key in event){
-      s += "<br>&nbsp;<b>" + key + "</b>: " + event.changedTouches[touchid][key]+",";
+      s += "<br>&nbsp;<b>" + key + "</b>: " + event.targetTouches[touchid][key]+",";
     }
     s += "]";
   }
-  s += "}";
-  output.innerHTML += (s.substring(0,s.length-1)+"}</p>");
+  s += "}}</p>";
+  output.innerHTML += (s.substring(0,s.length));
 }
 
 
